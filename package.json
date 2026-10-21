@@ -20,6 +20,10 @@
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
     },
+    "./glyphs": {
+      "types": "./dist/glyphs.d.ts",
+      "default": "./dist/glyphs.js"
+    },
     "./themes": {
       "types": "./dist/themes.d.ts",
       "default": "./dist/themes.js"

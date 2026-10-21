@@ -71,6 +71,21 @@ here in its own change; until then, a token edited in the artifact reaches
 kanso-ui's `src/tokens/design.tokens.json` first, and this file is brought in
 step with it by hand. This one was taken from kanso-ui at `e21ae3e`.
 
+## The glyph paths
+
+**`./glyphs` publishes the path data of the glyphs both libraries draw inside
+their own controls**: a checkbox's check and dash, a stepper's plus and minus, a
+search field's magnifier and cross, the chevrons, arrows, calendar and clock the
+pickers and menus show. Each is a `<name>Path` constant holding an SVG path's
+`d` on the 24-unit grid `gridSize` names, as Material Symbols draws it. Nothing
+here draws one: the web library renders an inline SVG and the native one
+react-native-svg, and each decides there whether a glyph mirrors in a
+right-to-left layout, since that is how a glyph is drawn rather than what it is.
+
+`src/glyphs.test.ts` pins the exported names, since each library draws every
+glyph by name, and holds each path to opening with a move command, without which
+a renderer draws nothing.
+
 ## The demo schemes
 
 **`./themes` publishes the seven demo schemes both Storybooks render**:
