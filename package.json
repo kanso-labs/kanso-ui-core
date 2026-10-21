@@ -20,6 +20,10 @@
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
     },
+    "./themes": {
+      "types": "./dist/themes.d.ts",
+      "default": "./dist/themes.js"
+    },
     "./tokens.css": {
       "types": "./dist/stylesheet.d.ts",
       "default": "./dist/tokens.css"
