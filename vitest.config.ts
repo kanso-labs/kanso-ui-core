@@ -5,7 +5,9 @@ import { defineConfig } from 'vitest/config'
 export default defineConfig({
   test: {
     coverage: {
-      exclude: ['src/**/*.test.ts'],
+      // The token defaults are generated data, which the tests read rather
+      // than run.
+      exclude: ['src/**/*.test.ts', 'src/tokens/defaults.ts'],
       include: ['src/**/*.ts'],
       provider: 'v8',
       reporter: ['text', 'cobertura'],

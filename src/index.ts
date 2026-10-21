@@ -3,7 +3,7 @@
 // renders anything or depends on a platform, so every export is a value or a
 // type that a browser, Hermes and Node can all load as it is.
 //
-// The lint rejects a file with no statement in it, and an empty export list is
-// the one statement that changes nothing. The first real export replaces it.
-// oxlint-disable-next-line unicorn/require-module-specifiers
-export {}
+// The token defaults are generated from src/tokens/design.tokens.json by
+// scripts/build-tokens.mjs, which `build`, `lint` and `test` run first.
+export { breakpoints, dark, light } from './tokens/defaults.ts'
+export type { KuiTheme } from './tokens/defaults.ts'

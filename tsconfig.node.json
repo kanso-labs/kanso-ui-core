@@ -24,5 +24,10 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["eslint.config.js", "tsdown.config.ts", "vitest.config.ts"]
+  "include": [
+    "eslint.config.js",
+    "scripts/*.mjs",
+    "tsdown.config.ts",
+    "vitest.config.ts"
+  ]
 }

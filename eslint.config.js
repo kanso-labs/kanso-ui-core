@@ -9,8 +9,15 @@ export default defineConfig([
   // `.claude/worktrees/` holds per-session checkouts of this repository, so
   // without this ESLint lints every other branch alongside the current one.
   // Flat config does not read .gitignore the way oxlint and oxfmt do, so it
-  // has to be named here, and so does what the build and the tests write.
-  globalIgnores(['.claude', 'coverage', 'dist']),
+  // has to be named here, and so does what the token build, the build and the
+  // tests write.
+  globalIgnores([
+    '.claude',
+    'coverage',
+    'dist',
+    'src/tokens/defaults.ts',
+    'src/tokens/design.tokens.css',
+  ]),
   {
     extends: [
       eslintJs.configs.recommended,
@@ -22,11 +29,11 @@ export default defineConfig([
       ecmaVersion: 2023,
     },
   },
-  // The configuration files at the root and the tests run under Node. The
-  // package itself is read by a browser, Hermes and Node alike, so it gets
-  // none of their globals.
+  // The configuration files at the root, the scripts and the tests run under
+  // Node. The package itself is read by a browser, Hermes and Node alike, so
+  // it gets none of their globals.
   {
-    files: ['*.{cjs,js,ts}', 'src/**/*.test.ts'],
+    files: ['*.{cjs,js,ts}', 'scripts/**/*.mjs', 'src/**/*.test.ts'],
     languageOptions: {
       globals: globals.node,
     },
