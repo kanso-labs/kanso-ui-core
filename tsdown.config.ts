@@ -1,4 +1,5 @@
 import { codecovRollupPlugin } from '@codecov/rollup-plugin'
+import { copyFileSync, mkdirSync, writeFileSync } from 'node:fs'
 import { defineConfig } from 'tsdown'
 
 export default defineConfig({
@@ -23,6 +24,28 @@ export default defineConfig({
       enableBundleAnalysis: Boolean(process.env.CODECOV_TOKEN),
       uploadToken: process.env.CODECOV_TOKEN,
     }),
+    // The token build writes the stylesheet beside its source rather than
+    // through rolldown's module graph, so nothing else carries either file
+    // into the package. `./tokens.css` is the override contract both
+    // libraries publish, and `./tokens.json` the DTCG source itself, for a
+    // build that reads the tokens in a shape the main entry does not give.
+    //
+    // A stylesheet subpath also takes a `types` condition, pointing at an empty
+    // declaration written beside it, as kanso-ui's does. Without one, a
+    // TypeScript consumer's side-effect import of it fails under
+    // `noUncheckedSideEffectImports`, and attw reports the subpath unresolved.
+    {
+      name: 'copy-tokens',
+      writeBundle() {
+        mkdirSync('dist', { recursive: true })
+        copyFileSync('src/tokens/design.tokens.css', 'dist/tokens.css')
+        copyFileSync('src/tokens/design.tokens.json', 'dist/tokens.json')
+        writeFileSync(
+          'dist/stylesheet.d.ts',
+          '// The declaration behind the ./tokens.css subpath, which a\n// side-effect import resolves to. A stylesheet exports nothing.\nexport {}\n',
+        )
+      },
+    },
   ],
   sourcemap: true,
   tsconfig: 'tsconfig.lib.json',

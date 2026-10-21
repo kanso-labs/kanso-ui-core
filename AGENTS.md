@@ -28,16 +28,60 @@ would ask every app for one. `src/package.test.ts` fails if one is added.
 system there, and a change made there reaches the libraries through a pull
 request against the repository that holds the data.
 
+## The design tokens
+
+**`src/tokens/design.tokens.json` is the token source**, the W3C Design Tokens
+(DTCG) file both libraries build from, `$extensions` → `voice` and its copy
+guidelines included. `scripts/build-tokens.mjs` reads it through Style
+Dictionary and writes two files beside it:
+
+- `design.tokens.css`, published as `./tokens.css`: every `--kui-*` custom
+  property at its light value on `:root`, and the colours again under
+  `prefers-color-scheme: dark`. It is the override contract both libraries
+  publish.
+- `defaults.ts`, which the main entry re-exports: `light` and `dark`, each
+  mapping every property to its value in CSS syntax; `breakpoints`, the window
+  size classes in px, which are dp on native; and the `KuiTheme` type, whose
+  per-property JSDoc names each default.
+
+The source itself goes out as `./tokens.json`, unchanged.
+
+**Neither generated file is committed.** `build`, `lint` and `test` run
+`npm run tokens:build` first, so there is no copy to edit by hand or to leave
+stale. `.gitignore`, ESLint's `globalIgnores` and oxlint's `ignorePatterns` all
+name them. `src/tokens/defaults.test.ts` holds `light` and `dark` to the
+stylesheet's two blocks and `breakpoints` to the source; `light` and `dark` are
+typed `Required<KuiTheme>`, so `tsc -b` holds the type to the same keys.
+
+**The stylesheet is byte for byte the one kanso-ui published, banner included.**
+The generators are kanso-ui's and react-native-kanso-ui's, moved here, and
+kanso-ui publishes this file under its own `./tokens.css`, so a change to a
+generator changes what both libraries ship. Diff the built `dist/tokens.css`
+against the last release's before changing one.
+
+**`./tokens.css` takes a `types` condition**, pointing at an empty
+`dist/stylesheet.d.ts` that tsdown writes, as kanso-ui's does. Without it a
+TypeScript consumer's side-effect import of the stylesheet fails under
+`noUncheckedSideEffectImports`, and attw reports the subpath unresolved. The
+stylesheet is also why `sideEffects` names `**/*.css` rather than being `false`:
+a bundler would otherwise drop an import of it.
+
+**The design system sync still writes kanso-ui's copy of the source.** It moves
+here in its own change; until then, a token edited in the artifact reaches
+kanso-ui's `src/tokens/design.tokens.json` first, and this file is brought in
+step with it by hand. This one was taken from kanso-ui at `e21ae3e`.
+
 ## Commands
 
-| Task     | Command                 | Notes                                                            |
-| -------- | ----------------------- | ---------------------------------------------------------------- |
-| Test     | `npm test`              | Vitest, in Node                                                  |
-| Coverage | `npm run test:coverage` | The same suite with coverage and JUnit results, which Test sends |
-| Lint     | `npm run lint`          | oxlint, then ESLint, then oxfmt formatting check                 |
-| Build    | `npm run build`         | Type-checks (`tsc -b`) then builds ESM into `dist/`              |
-| Format   | `npm run format`        | oxfmt; `npm run format:check` is the check `lint` already runs   |
-| Verify   | `npm run package:check` | publint, then attw; reads `dist/`, so build first                |
+| Task     | Command                 | Notes                                                               |
+| -------- | ----------------------- | ------------------------------------------------------------------- |
+| Test     | `npm test`              | Vitest, in Node                                                     |
+| Coverage | `npm run test:coverage` | The same suite with coverage and JUnit results, which Test sends    |
+| Lint     | `npm run lint`          | oxlint, then ESLint, then oxfmt formatting check                    |
+| Build    | `npm run build`         | Type-checks (`tsc -b`) then builds ESM into `dist/`                 |
+| Format   | `npm run format`        | oxfmt; `npm run format:check` is the check `lint` already runs      |
+| Verify   | `npm run package:check` | publint, then attw; reads `dist/`, so build first                   |
+| Tokens   | `npm run tokens:build`  | Writes the stylesheet and the defaults; build, lint and test run it |
 
 **Install with the Node version in `.tool-versions`.** CI resolves it from that
 file, and an older npm rewrites `package-lock.json` in a way no check here can

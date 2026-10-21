@@ -20,26 +20,34 @@
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
     },
+    "./tokens.css": {
+      "types": "./dist/stylesheet.d.ts",
+      "default": "./dist/tokens.css"
+    },
+    "./tokens.json": "./dist/tokens.json",
     "./package.json": "./package.json"
   },
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "type": "module",
-  "sideEffects": false,
+  "sideEffects": [
+    "**/*.css"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kanso-labs/kanso-ui-core.git"
   },
   "scripts": {
-    "build": "tsc -b && tsdown",
+    "build": "npm run tokens:build && tsc -b && tsdown",
     "format": "oxfmt",
     "format:check": "oxfmt --check",
-    "lint": "oxlint --type-aware . && eslint . && npm run format:check",
+    "lint": "npm run tokens:build && oxlint --type-aware . && eslint . && npm run format:check",
     "package:check": "publint && attw --pack --profile esm-only",
     "prepare": "husky || true",
-    "test": "vitest run",
-    "test:coverage": "vitest run --coverage"
+    "test": "npm run tokens:build && vitest run",
+    "test:coverage": "npm run tokens:build && vitest run --coverage",
+    "tokens:build": "node scripts/build-tokens.mjs"
   },
   "author": "Kanso Labs <kanso.labs.org@gmail.com>",
   "devDependencies": {
@@ -60,6 +68,7 @@
     "oxlint": "1.89.0",
     "oxlint-tsgolint": "7.0.2004",
     "publint": "0.3.25",
+    "style-dictionary": "5.7.0",
     "tsdown": "0.23.1",
     "typescript": "6.0.3",
     "typescript-eslint": "8.72.0",

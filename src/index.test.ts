@@ -7,6 +7,10 @@ import * as entry from './index.ts'
 // A barrel compiles to bindings with no statements, so coverage cannot see it.
 describe('the main entry', () => {
   it('exports exactly the names below', () => {
-    expect(Object.keys(entry).toSorted()).toEqual([])
+    expect(Object.keys(entry).toSorted()).toEqual([
+      'breakpoints',
+      'dark',
+      'light',
+    ])
   })
 })

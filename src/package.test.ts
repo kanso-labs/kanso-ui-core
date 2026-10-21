@@ -14,6 +14,16 @@ describe('package.json', () => {
     })
   })
 
+  // The stylesheet and the DTCG source both libraries have published as
+  // `./tokens.css` and `./tokens.json`, under the same names here.
+  it('publishes the tokens as files', () => {
+    expect(manifest.exports['./tokens.css']).toEqual({
+      default: './dist/tokens.css',
+      types: './dist/stylesheet.d.ts',
+    })
+    expect(manifest.exports['./tokens.json']).toBe('./dist/tokens.json')
+  })
+
   // Both libraries take this package as a devDependency and bundle what they
   // read from it, so an app installing either of them installs nothing of this
   // package's. A dependency here would reach neither app, and a peer would ask
@@ -25,8 +35,10 @@ describe('package.json', () => {
   })
 
   // A bundler drops a module nothing imports from only when the package says
-  // loading it does nothing, and data has nothing to do on load.
-  it('declares itself free of side effects', () => {
-    expect(manifest.sideEffects).toBe(false)
+  // loading it does nothing, and data has nothing to do on load. A stylesheet
+  // is imported for nothing but its effect, so it is the one exception, or a
+  // bundler would drop `import '@kanso-labs/kanso-ui-core/tokens.css'`.
+  it('declares nothing but its stylesheet to have side effects', () => {
+    expect(manifest.sideEffects).toEqual(['**/*.css'])
   })
 })

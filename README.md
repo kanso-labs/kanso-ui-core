@@ -12,7 +12,13 @@ on iOS and Android.
 The package is data and types only. Both libraries build from it and bundle what
 they read, so an app installs one of them rather than this.
 
-The package has not been released yet.
+## What it publishes
+
+| Import                                  | What it is                                                                                                                             |
+| --------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `@kanso-labs/kanso-ui-core`             | `light` and `dark`, every `--kui-*` property at its value in each scheme; `breakpoints`, the window size classes; the `KuiTheme` type  |
+| `@kanso-labs/kanso-ui-core/tokens.css`  | The `--kui-*` custom properties at their defaults, the dark colours under `prefers-color-scheme: dark`, as both libraries publish them |
+| `@kanso-labs/kanso-ui-core/tokens.json` | The design tokens themselves, in the W3C Design Tokens format                                                                          |
 
 ## Development
 
@@ -28,6 +34,7 @@ mise exec node@"$(awk '/^nodejs/{print $2}' .tool-versions)" -- npm install
 | Lint   | `npm run lint`          |
 | Build  | `npm run build`         |
 | Verify | `npm run package:check` |
+| Tokens | `npm run tokens:build`  |
 
 ## License
 
