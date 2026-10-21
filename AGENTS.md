@@ -66,10 +66,35 @@ TypeScript consumer's side-effect import of the stylesheet fails under
 stylesheet is also why `sideEffects` names `**/*.css` rather than being `false`:
 a bundler would otherwise drop an import of it.
 
-**The design system sync still writes kanso-ui's copy of the source.** It moves
-here in its own change; until then, a token edited in the artifact reaches
-kanso-ui's `src/tokens/design.tokens.json` first, and this file is brought in
-step with it by hand. This one was taken from kanso-ui at `e21ae3e`.
+**The design system artifact edits this file.** The
+[Kanso UI design system artifact](https://claude.ai/artifact/TJSpYMBeBEMx1agnDVuZdv)
+is the design system's source of truth, and `.design-sync/artifact/` is the
+token half of the daily sync that keeps the two in step: `tokens.mjs pull`
+brings a token edited there into `src/tokens/design.tokens.json` and its usage
+note into `notes.json`, through a pull request from the `design-sync/artifact`
+branch, and `tokens.mjs build` writes the artifact's `tokens.json` back from
+them. Its README has the steps. The rest of the sync, the bundle, fonts and
+component pages, is kanso-ui's, and its own `.design-sync/artifact/` runs after
+this half and publishes both.
+
+Three things follow from how it works:
+
+- **A token changed here survives the sync, and the artifact wins a clash.** A
+  pull applies only the fields the artifact changed since the commit its
+  `meta.ref` names, so a repository edit it never touched is kept; where both
+  sides changed one value, the artifact's lands and the pull request names the
+  clash.
+- **A usage note lives in `notes.json`**, since the token file has no field for
+  one. A note edited in the artifact comes back into that file, and a note
+  written here reaches the artifact on the next sync.
+- **`node .design-sync/artifact/tokens.mjs check` proves the mapping**: a pull
+  of an unedited build changes nothing, one edit of every kind lands, and a
+  repository edit survives. Run it after changing either direction; a field the
+  token file gains needs a place in both.
+
+The directory is plain Node with no build step, and the linters and formatter
+leave it out, as kanso-ui's do: it is tooling a routine runs rather than code
+the package ships.
 
 ## The glyph paths
 
