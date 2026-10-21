@@ -14,6 +14,15 @@ describe('package.json', () => {
     })
   })
 
+  // The glyph paths are read by the code that draws a control, the demo
+  // schemes by a Storybook, so neither rides in the main entry.
+  it('publishes the glyph paths on a subpath of their own', () => {
+    expect(manifest.exports['./glyphs']).toEqual({
+      default: './dist/glyphs.js',
+      types: './dist/glyphs.d.ts',
+    })
+  })
+
   // The demo schemes are Storybook material rather than palettes anyone should
   // ship, and a subpath of their own keeps that visible.
   it('publishes the demo schemes on a subpath of their own', () => {
