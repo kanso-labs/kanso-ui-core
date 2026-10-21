@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.1](https://github.com/kanso-labs/kanso-ui-core/compare/v0.1.0...v0.1.1) (2026-10-21)
+
+
+### Dependencies
+
+* update kanso-labs/actions action to v4.3.1 ([#12](https://github.com/kanso-labs/kanso-ui-core/issues/12)) ([458db64](https://github.com/kanso-labs/kanso-ui-core/commit/458db64db8a4652c43bc5ed28804e98b90d9fef2))
+* update node.js to v24.22.1 ([#13](https://github.com/kanso-labs/kanso-ui-core/issues/13)) ([3d911c1](https://github.com/kanso-labs/kanso-ui-core/commit/3d911c137c4a134414efccad57721cad02e6107d))
+
 ## 0.1.0 (2026-10-21)
 
 
