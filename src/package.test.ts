@@ -14,6 +14,15 @@ describe('package.json', () => {
     })
   })
 
+  // The demo schemes are Storybook material rather than palettes anyone should
+  // ship, and a subpath of their own keeps that visible.
+  it('publishes the demo schemes on a subpath of their own', () => {
+    expect(manifest.exports['./themes']).toEqual({
+      default: './dist/themes.js',
+      types: './dist/themes.d.ts',
+    })
+  })
+
   // The stylesheet and the DTCG source both libraries have published as
   // `./tokens.css` and `./tokens.json`, under the same names here.
   it('publishes the tokens as files', () => {

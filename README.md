@@ -17,6 +17,7 @@ they read, so an app installs one of them rather than this.
 | Import                                  | What it is                                                                                                                             |
 | --------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
 | `@kanso-labs/kanso-ui-core`             | `light` and `dark`, every `--kui-*` property at its value in each scheme; `breakpoints`, the window size classes; the `KuiTheme` type  |
+| `@kanso-labs/kanso-ui-core/themes`      | `demoThemes`, the seven demo schemes both libraries' Storybooks render, each a `KuiTheme` with a label and a description               |
 | `@kanso-labs/kanso-ui-core/tokens.css`  | The `--kui-*` custom properties at their defaults, the dark colours under `prefers-color-scheme: dark`, as both libraries publish them |
 | `@kanso-labs/kanso-ui-core/tokens.json` | The design tokens themselves, in the W3C Design Tokens format                                                                          |
 

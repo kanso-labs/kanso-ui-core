@@ -71,6 +71,26 @@ here in its own change; until then, a token edited in the artifact reaches
 kanso-ui's `src/tokens/design.tokens.json` first, and this file is brought in
 step with it by hand. This one was taken from kanso-ui at `e21ae3e`.
 
+## The demo schemes
+
+**`./themes` publishes the seven demo schemes both Storybooks render**:
+Editorial, Graphite, Marquee, Neon, Nordic, Poster and Terminal. Each is a
+`{ description, label, theme }` record in `src/themes.ts`, and `theme` is the
+`KuiTheme` a consumer would hand either library's `ThemeScope`. They are
+Storybook material rather than palettes anyone should ship, which is why they
+take a subpath of their own and stay out of the main entry.
+
+**Every scheme states every colour.** A colour's default is a pair, one value
+per scheme, so a colour a map leaves out falls back to the light or the dark
+default depending on the reader's device. No other group differs between the
+schemes, so a partial map over the others reads the same everywhere.
+`src/themes.test.ts` holds each scheme to that and to properties `tokens.css`
+declares, and pins the seven labels.
+
+Contrast is checked where the schemes are drawn: each library's Storybook runs
+its a11y check over every scheme's page, and a scheme changed here has to clear
+WCAG AA in both.
+
 ## Commands
 
 | Task     | Command                 | Notes                                                               |

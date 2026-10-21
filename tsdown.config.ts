@@ -4,7 +4,9 @@ import { defineConfig } from 'tsdown'
 
 export default defineConfig({
   dts: true,
-  entry: ['src/index.ts'],
+  // The demo schemes are an entry of their own, `./themes`, so that what a
+  // Storybook renders stays apart from what a library ships.
+  entry: ['src/index.ts', 'src/themes.ts'],
   format: ['esm'],
   // Neutral rather than Node, because a browser bundle and Metro read this
   // package as much as Node does. It is also what keeps the output `.js`,
