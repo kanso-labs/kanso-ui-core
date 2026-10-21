@@ -53,6 +53,7 @@
   },
   "ignorePatterns": [
     ".claude/worktrees",
+    ".design-sync",
     "coverage",
     "dist",
     "src/tokens/defaults.ts"

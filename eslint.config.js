@@ -10,9 +10,11 @@ export default defineConfig([
   // without this ESLint lints every other branch alongside the current one.
   // Flat config does not read .gitignore the way oxlint and oxfmt do, so it
   // has to be named here, and so does what the token build, the build and the
-  // tests write.
+  // tests write. `.design-sync` holds the scripts a design system sync runs,
+  // kept in the compact style kanso-ui's copy of them was written in.
   globalIgnores([
     '.claude',
+    '.design-sync',
     'coverage',
     'dist',
     'src/tokens/defaults.ts',
