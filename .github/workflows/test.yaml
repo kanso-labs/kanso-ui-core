@@ -1,0 +1,101 @@
+name: Test
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+# code-quality is what the coverage upload below needs to report against the
+# pull request.
+permissions:
+  code-quality: write
+  contents: read
+
+# Three pushes to a branch inside a minute otherwise run three Tests to
+# completion, and only the last one is answering a question anybody is asking.
+# Grouped per workflow and ref, so Test never waits on Build or Lint and one
+# branch never waits on another.
+#
+# cancel-in-progress is on everywhere except main, and main matters more here
+# than for the other two: this is the workflow that uploads the coverage
+# report, so a cancelled run there is a merge with no coverage recorded against
+# it rather than one stale check.
+concurrency:
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+  group: test-${{ github.ref }}
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7.0.1
+
+      # Nothing the suite needs comes from a lifecycle script: it runs in Node
+      # alone, with no browser to install.
+      - name: Set up Node
+        uses: kanso-labs/actions/setup-node@v4.3.0
+        with:
+          ignore-scripts: true
+
+      # The suite with coverage, which writes the Cobertura report the two
+      # uploads below read.
+      - name: Run tests
+        run: npm run test:coverage
+
+      # Reports the line coverage on the pull request. fail-on-error is off
+      # because the action defaults it on and waits on a service GitHub ships
+      # as a preview, so an outage there would fail a Test whose suite already
+      # passed. A missing report or a bad input still fails the step.
+      - name: Upload coverage report
+        uses: actions/upload-code-coverage@v1.4.4
+        with:
+          fail-on-error: false
+          file: coverage/cobertura-coverage.xml
+          label: code-coverage/vitest
+          language: TypeScript
+
+      # A second destination for the same Cobertura file rather than a
+      # replacement for the step above: that one reports the number on the pull
+      # request, this one is what keeps the history the trend lines are drawn
+      # from.
+      #
+      # disable_search is what confines the upload to that one file. The action
+      # otherwise walks the workspace for anything shaped like a coverage
+      # report, which here can only find the file already named above.
+      #
+      # fail_ci_if_error is left at its default of false, so a Codecov outage
+      # reports a failed upload rather than failing Test. Codecov gates
+      # nothing, and an upload is not worth a red check on work that passed.
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v7.1.1
+        with:
+          disable_search: true
+          files: coverage/cobertura-coverage.xml
+          token: ${{ secrets.CODECOV_TOKEN }}
+
+      # The test results themselves, which is a different report from the
+      # coverage one above: Codecov reads it for which tests failed and which
+      # are flaky, not for a percentage. `report_type` is what says which of
+      # the two this upload is; the default is coverage.
+      #
+      # The same action as above rather than `codecov/test-results-action`,
+      # which Codecov's own docs still point at. That one prints "This action
+      # is being deprecated in favor of 'codecov-action'" on every run, and
+      # this is the replacement it names, so one pinned action covers both
+      # reports and Renovate has one bump to open rather than two.
+      #
+      # `!cancelled()` is what makes this the one step that runs when the suite
+      # fails, and it is the whole point: a run with nothing red has no failed
+      # tests to describe.
+      - name: Upload test results to Codecov
+        if: ${{ !cancelled() }}
+        uses: codecov/codecov-action@v7.1.1
+        with:
+          disable_search: true
+          files: .vitest/test-results.junit.xml
+          report_type: test_results
+          token: ${{ secrets.CODECOV_TOKEN }}

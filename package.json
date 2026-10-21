@@ -1,0 +1,73 @@
+{
+  "name": "@kanso-labs/kanso-ui-core",
+  "version": "0.0.0",
+  "description": "The design data Kanso UI's web and React Native libraries share: the design tokens, the demo schemes and the glyph paths",
+  "keywords": [
+    "design-system",
+    "design-tokens",
+    "material-design",
+    "kanso-ui"
+  ],
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kanso-labs/kanso-ui-core.git"
+  },
+  "scripts": {
+    "build": "tsc -b && tsdown",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
+    "lint": "oxlint --type-aware . && eslint . && npm run format:check",
+    "package:check": "publint && attw --pack --profile esm-only",
+    "prepare": "husky || true",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage"
+  },
+  "author": "Kanso Labs <kanso.labs.org@gmail.com>",
+  "devDependencies": {
+    "@arethetypeswrong/cli": "0.18.5",
+    "@codecov/rollup-plugin": "2.0.1",
+    "@commitlint/cli": "21.2.4",
+    "@commitlint/config-conventional": "21.2.4",
+    "@eslint/js": "10.0.1",
+    "@types/node": "26.6.5",
+    "@vitest/coverage-v8": "5.0.5",
+    "eslint": "10.13.0",
+    "eslint-plugin-oxlint": "1.89.0",
+    "eslint-plugin-perfectionist": "5.13.0",
+    "globals": "17.13.0",
+    "husky": "9.1.7",
+    "lint-staged": "17.6.0",
+    "oxfmt": "0.74.0",
+    "oxlint": "1.89.0",
+    "oxlint-tsgolint": "7.0.2004",
+    "publint": "0.3.25",
+    "tsdown": "0.23.1",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.72.0",
+    "vitest": "5.0.5"
+  },
+  "overrides": {
+    "eslint-plugin-oxlint": {
+      "oxlint": "$oxlint"
+    }
+  }
+}

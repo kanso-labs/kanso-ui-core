@@ -1,0 +1,42 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "local>kanso-labs/.github:renovate-config is the organization's shared Renovate preset, holding the settings that have to hold in every kanso-labs repository. It is listed last because a later preset wins a conflict with an earlier one: moved ahead of config:recommended it would be overridden by the very preset it exists to correct. This file is merged over the runner's config.js rather than inheriting from it, so extending the preset here is what carries an organization-wide setting into this repository at all. See the README in kanso-labs/.github.",
+  "extends": ["config:recommended", "local>kanso-labs/.github:renovate-config"],
+  "labels": ["area:foundations", "kind:tooling"],
+  "lockFileMaintenance": {
+    "automerge": true,
+    "enabled": true
+  },
+  "minimumReleaseAge": null,
+  "packageRules": [
+    {
+      "allowedVersions": "<7",
+      "description": "typescript-eslint peers on typescript >=4.8.4 <6.1.0, so Renovate's lockfile update for TypeScript 7 fails on the conflict and the pull request fails npm ci. Lift this once a released typescript-eslint admits TypeScript 7.",
+      "matchPackageNames": ["typescript"]
+    },
+    {
+      "groupName": "commitlint",
+      "matchPackageNames": ["@commitlint/**"]
+    },
+    {
+      "groupName": "eslint",
+      "matchPackageNames": [
+        "@eslint/**",
+        "eslint",
+        "eslint-config-**",
+        "eslint-plugin-**",
+        "typescript-eslint",
+        "!eslint-plugin-oxlint"
+      ]
+    },
+    {
+      "description": "eslint-plugin-oxlint peers oxlint at a tilde range on its own minor and is published after it, or not at all. The overrides entry in package.json points the plugin's peer at the root's own oxlint, so oxlint moves on its own and the plugin follows when it is published.",
+      "groupName": "oxlint",
+      "matchPackageNames": ["eslint-plugin-oxlint", "oxlint"]
+    },
+    {
+      "groupName": "vitest",
+      "matchPackageNames": ["@vitest/**", "vitest"]
+    }
+  ]
+}
