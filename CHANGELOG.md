@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.2](https://github.com/kanso-labs/kanso-ui-core/compare/v0.1.1...v0.1.2) (2026-10-23)
+
+
+### Dependencies
+
+* update dependency oxlint-tsgolint to v7.0.2005 ([#16](https://github.com/kanso-labs/kanso-ui-core/issues/16)) ([975adad](https://github.com/kanso-labs/kanso-ui-core/commit/975adad21c3ea68da599b384d28cafbd17d8e91d))
+* update dependency tsdown to v0.23.2 ([#18](https://github.com/kanso-labs/kanso-ui-core/issues/18)) ([8d6fdbc](https://github.com/kanso-labs/kanso-ui-core/commit/8d6fdbcf704bd9a722584312e78da332a32e286b))
+
 ## [0.1.1](https://github.com/kanso-labs/kanso-ui-core/compare/v0.1.0...v0.1.1) (2026-10-21)
 
 
