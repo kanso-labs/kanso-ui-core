@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.3](https://github.com/kanso-labs/kanso-ui-core/compare/v0.1.2...v0.1.3) (2026-10-24)
+
+
+### Dependencies
+
+* update dependency style-dictionary to v5.7.1 ([#19](https://github.com/kanso-labs/kanso-ui-core/issues/19)) ([15ef42e](https://github.com/kanso-labs/kanso-ui-core/commit/15ef42e23572e4b7a1323b1f7a8b152bdd33c779))
+
 ## [0.1.2](https://github.com/kanso-labs/kanso-ui-core/compare/v0.1.1...v0.1.2) (2026-10-23)
 
 
