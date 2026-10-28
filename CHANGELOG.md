@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.5](https://github.com/kanso-labs/kanso-ui-core/compare/v0.1.4...v0.1.5) (2026-10-28)
+
+
+### Dependencies
+
+* update dependency eslint-plugin-oxlint to v1.90.0 ([#25](https://github.com/kanso-labs/kanso-ui-core/issues/25)) ([32d6c01](https://github.com/kanso-labs/kanso-ui-core/commit/32d6c014d14490053cb152b344ec413fa7342587))
+* update dependency tsdown to v0.23.3 ([#27](https://github.com/kanso-labs/kanso-ui-core/issues/27)) ([642329a](https://github.com/kanso-labs/kanso-ui-core/commit/642329aacc75ce00e66a3da185a3cce6cf12e0af))
+
 ## [0.1.4](https://github.com/kanso-labs/kanso-ui-core/compare/v0.1.3...v0.1.4) (2026-10-27)
 
 
