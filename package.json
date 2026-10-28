@@ -1,6 +1,6 @@
 {
   "name": "@kanso-labs/kanso-ui-core",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "The design data Kanso UI's web and React Native libraries share: the design tokens, the demo schemes and the glyph paths",
   "keywords": [
     "design-system",
