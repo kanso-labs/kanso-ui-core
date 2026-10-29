@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.1.6](https://github.com/kanso-labs/kanso-ui-core/compare/v0.1.5...v0.1.6) (2026-10-29)
+
+
+### Dependencies
+
+* update dependency tsdown to v0.23.4 ([#32](https://github.com/kanso-labs/kanso-ui-core/issues/32)) ([bce375b](https://github.com/kanso-labs/kanso-ui-core/commit/bce375b3c822c9bf7537ee7ba63d0df698fdeb16))
+* update kanso-labs/actions action to v4.4.0 ([#33](https://github.com/kanso-labs/kanso-ui-core/issues/33)) ([bf15cf4](https://github.com/kanso-labs/kanso-ui-core/commit/bf15cf4a718165a8dbba4dccdb1fe71d0f23ec4a))
+* update node.js to v24.22.2 ([#29](https://github.com/kanso-labs/kanso-ui-core/issues/29)) ([536421a](https://github.com/kanso-labs/kanso-ui-core/commit/536421aaef0efe6b987d3f95f63d8e58a974c3b0))
+* update node.js to v26 ([#28](https://github.com/kanso-labs/kanso-ui-core/issues/28)) ([c781d59](https://github.com/kanso-labs/kanso-ui-core/commit/c781d594211a5695b8ae0084095b500ca45da9d2))
+
 ## [0.1.5](https://github.com/kanso-labs/kanso-ui-core/compare/v0.1.4...v0.1.5) (2026-10-28)
 
 
