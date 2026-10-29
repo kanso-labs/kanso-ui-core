@@ -293,14 +293,23 @@ the pull request is open.
 ## Working the plan
 
 The plan lives on the
-[Kanso UI project](https://github.com/orgs/kanso-labs/projects/1), under the
-Phase `19 · Core package`, beside the items in kanso-ui and
-react-native-kanso-ui it unblocks. One issue per pull request, each titled with
-the Conventional Commit it will merge as, carrying a `kind:` and an `area:`
-label, a type, and the native Priority and Effort fields, and naming what it
-depends on. kanso-ui's `AGENTS.md`, under "Working the coverage plan", sets out
-how each field is derived. A pull request closes its issue with `Closes #N` and
-takes the issue's two labels.
+[Kanso UI project](https://github.com/orgs/kanso-labs/projects/1), which also
+covers kanso-ui and react-native-kanso-ui. Its fields, views and workflows are
+the organization's
+[project standard](https://github.com/kanso-labs/.github/blob/main/PROJECTS.md),
+and its README lists the Area options. This package's plan is the epic
+[Core package](https://github.com/kanso-labs/kanso-ui-core/issues/34); the items
+in kanso-ui and react-native-kanso-ui that need what it publishes are marked as
+blocked by the ones here.
+
+One issue per pull request. Title it with the Conventional Commit it will merge
+as, and give it a type, a Priority, an Effort, an Area, its parent epic and a
+blocked-by link for each issue that must land first.
+
+Work the Ready items in Priority order, oldest first within a priority. Branch
+from `main`, unless something blocking the issue has not merged yet, and then
+from that work's branch. The pull request closes its issue with `Closes #N`, and
+the project's workflows move Status from there.
 
 ## Traps
 
