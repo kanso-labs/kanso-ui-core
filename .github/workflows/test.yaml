@@ -37,7 +37,7 @@ jobs:
       # Nothing the suite needs comes from a lifecycle script: it runs in Node
       # alone, with no browser to install.
       - name: Set up Node
-        uses: kanso-labs/actions/setup-node@v4.3.1
+        uses: kanso-labs/actions/setup-node@v4.4.0
         with:
           ignore-scripts: true
 
