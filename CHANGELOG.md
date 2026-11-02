@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.10](https://github.com/kanso-labs/kanso-ui-core/compare/v0.1.9...v0.1.10) (2026-11-02)
+
+
+### Dependencies
+
+* update vitest to v5.1.0 ([#48](https://github.com/kanso-labs/kanso-ui-core/issues/48)) ([165453d](https://github.com/kanso-labs/kanso-ui-core/commit/165453d056b31bb0a334a73d8dac06711de32a85))
+
 ## [0.1.9](https://github.com/kanso-labs/kanso-ui-core/compare/v0.1.8...v0.1.9) (2026-11-02)
 
 
