@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.9](https://github.com/kanso-labs/kanso-ui-core/compare/v0.1.8...v0.1.9) (2026-11-02)
+
+
+### Dependencies
+
+* update dependency globals to v17.14.0 ([#45](https://github.com/kanso-labs/kanso-ui-core/issues/45)) ([b0b7a20](https://github.com/kanso-labs/kanso-ui-core/commit/b0b7a20421c30efefe3e37597ad1984ee151139d))
+
 ## [0.1.8](https://github.com/kanso-labs/kanso-ui-core/compare/v0.1.7...v0.1.8) (2026-10-31)
 
 
