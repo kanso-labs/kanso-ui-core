@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.1.11](https://github.com/kanso-labs/kanso-ui-core/compare/v0.1.10...v0.1.11) (2026-11-04)
+
+
+### Dependencies
+
+* update dependency oxfmt to v0.76.0 ([#51](https://github.com/kanso-labs/kanso-ui-core/issues/51)) ([8edba98](https://github.com/kanso-labs/kanso-ui-core/commit/8edba98613740164d410e23e874cdc1ef6f6b11b))
+* update dependency oxlint to v1.91.0 ([#52](https://github.com/kanso-labs/kanso-ui-core/issues/52)) ([eb3aac4](https://github.com/kanso-labs/kanso-ui-core/commit/eb3aac4633579057eabb60cdfb552fa7f75b4285))
+* update dependency style-dictionary to v5.8.0 ([#54](https://github.com/kanso-labs/kanso-ui-core/issues/54)) ([3ac00d3](https://github.com/kanso-labs/kanso-ui-core/commit/3ac00d387fdbfb9e8d6a9953a3bb40ef51e30f68))
+* update dependency tsdown to v0.23.5 ([#50](https://github.com/kanso-labs/kanso-ui-core/issues/50)) ([826184a](https://github.com/kanso-labs/kanso-ui-core/commit/826184aafdda2534c400ecdd9fc704d33b477a1c))
+
 ## [0.1.10](https://github.com/kanso-labs/kanso-ui-core/compare/v0.1.9...v0.1.10) (2026-11-02)
 
 
