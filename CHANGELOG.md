@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.14](https://github.com/kanso-labs/kanso-ui-core/compare/v0.1.13...v0.1.14) (2026-11-06)
+
+
+### Dependencies
+
+* update dependency oxfmt to v0.77.0 ([#60](https://github.com/kanso-labs/kanso-ui-core/issues/60)) ([b0a054d](https://github.com/kanso-labs/kanso-ui-core/commit/b0a054d533e92bc43ae8e2cdd5e48b3f233b660c))
+* update dependency oxlint to v1.92.0 ([#61](https://github.com/kanso-labs/kanso-ui-core/issues/61)) ([8384db5](https://github.com/kanso-labs/kanso-ui-core/commit/8384db5756636fb6c762ddc62a64ad11242190a0))
+
 ## [0.1.13](https://github.com/kanso-labs/kanso-ui-core/compare/v0.1.12...v0.1.13) (2026-11-06)
 
 
