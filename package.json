@@ -77,7 +77,7 @@
     "oxlint-tsgolint": "7.0.2006",
     "publint": "0.3.25",
     "style-dictionary": "5.8.0",
-    "tsdown": "0.23.5",
+    "tsdown": "0.23.7",
     "typescript": "6.0.3",
     "typescript-eslint": "8.72.1",
     "vitest": "5.1.0"
