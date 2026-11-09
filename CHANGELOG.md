@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.17](https://github.com/kanso-labs/kanso-ui-core/compare/v0.1.16...v0.1.17) (2026-11-09)
+
+
+### Dependencies
+
+* update dependency oxfmt to v0.78.0 ([#68](https://github.com/kanso-labs/kanso-ui-core/issues/68)) ([392114d](https://github.com/kanso-labs/kanso-ui-core/commit/392114d4744616f5b98e342f0f627cd2f35fd542))
+* update dependency typescript-eslint to v8.72.2 ([#71](https://github.com/kanso-labs/kanso-ui-core/issues/71)) ([1f5c54e](https://github.com/kanso-labs/kanso-ui-core/commit/1f5c54ec97db9d6019bf2263440e677e9e97a40f))
+* update oxlint to v1.93.0 ([#69](https://github.com/kanso-labs/kanso-ui-core/issues/69)) ([62e4a94](https://github.com/kanso-labs/kanso-ui-core/commit/62e4a947229c9988d43182fd86112545e7732370))
+
 ## [0.1.16](https://github.com/kanso-labs/kanso-ui-core/compare/v0.1.15...v0.1.16) (2026-11-08)
 
 
