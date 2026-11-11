@@ -286,8 +286,22 @@ since a Dependabot pull request takes its workflows from the merge ref and
 Dependabot never edits one, so a change to it cannot be tried from a branch. A
 green run is not evidence: the job passes when it leaves a major for a person,
 so read its notice and check that the pull request shows auto-merge enabled.
-Dependabot's default title is not a Conventional Commit, and `Lint` checks the
-title, so a pull request carrying that title waits until its title is fixed.
+
+**`.github/dependabot.yaml` titles those security updates like Renovate's.**
+Dependabot's default title, such as
+`chore(deps-dev): Bump brace-expansion from 5.0.9 to 5.0.12 in the npm_and_yarn group across 1 directory`,
+is not accepted by `.commitlintrc.json`: the subject is sentence case, and
+`Lint` checks the title, so auto-merge would wait for ever. Each ecosystem a
+security update can arrive for has an entry, since one without keeps the
+defaults. Each sets `open-pull-requests-limit: 0`, which turns version updates
+off and leaves security updates on, and `commit-message.prefix: deps`. `deps` is
+in commitlint's `type-enum` and is a visible changelog section in
+`release-please-config.json`, so a security fix releases a patch, the same as a
+Renovate bump. It sets no labels. Grouped security updates, a repository
+setting, would append ` in the npm_and_yarn group across 1 directory` to the
+title, and the length limit is off here, so only the case matters. Do not add
+Dependabot's titles to commitlint's `ignores` instead: an ignored title skips
+`type-enum`, so a fix would reach `main` as a `chore` that releases nothing.
 
 ## Commits and pull requests
 
