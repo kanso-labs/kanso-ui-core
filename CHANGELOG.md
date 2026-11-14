@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.21](https://github.com/kanso-labs/kanso-ui-core/compare/v0.1.20...v0.1.21) (2026-11-14)
+
+
+### Dependencies
+
+* update dependency eslint to v10.15.0 ([#87](https://github.com/kanso-labs/kanso-ui-core/issues/87)) ([991acbf](https://github.com/kanso-labs/kanso-ui-core/commit/991acbfd2281d15e2abf9a9b5f8bed922c32596b))
+
 ## [0.1.20](https://github.com/kanso-labs/kanso-ui-core/compare/v0.1.19...v0.1.20) (2026-11-13)
 
 
