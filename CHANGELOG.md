@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.22](https://github.com/kanso-labs/kanso-ui-core/compare/v0.1.21...v0.1.22) (2026-11-15)
+
+
+### Dependencies
+
+* update dependency eslint-plugin-perfectionist to v5.14.0 ([#91](https://github.com/kanso-labs/kanso-ui-core/issues/91)) ([ed49d1f](https://github.com/kanso-labs/kanso-ui-core/commit/ed49d1fafe2c3be92d48500a09e04b9d045774a7))
+* update dependency lint-staged to v17.6.1 ([#90](https://github.com/kanso-labs/kanso-ui-core/issues/90)) ([2e3f984](https://github.com/kanso-labs/kanso-ui-core/commit/2e3f9844e963eeb14c811258de97cc2ded9edd44))
+
 ## [0.1.21](https://github.com/kanso-labs/kanso-ui-core/compare/v0.1.20...v0.1.21) (2026-11-14)
 
 
