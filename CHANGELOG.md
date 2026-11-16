@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.23](https://github.com/kanso-labs/kanso-ui-core/compare/v0.1.22...v0.1.23) (2026-11-16)
+
+
+### Dependencies
+
+* update dependency eslint-plugin-oxlint to v1.94.0 ([#96](https://github.com/kanso-labs/kanso-ui-core/issues/96)) ([30ae170](https://github.com/kanso-labs/kanso-ui-core/commit/30ae170df38157f377e605cce67fb66fc7ccab44))
+* update dependency oxfmt to v0.79.0 ([#93](https://github.com/kanso-labs/kanso-ui-core/issues/93)) ([786cc0d](https://github.com/kanso-labs/kanso-ui-core/commit/786cc0da7aac0cb00d58a2a6fd016ef35c1aed39))
+* update dependency oxlint to v1.94.0 ([#94](https://github.com/kanso-labs/kanso-ui-core/issues/94)) ([93437f5](https://github.com/kanso-labs/kanso-ui-core/commit/93437f5b5be330fd6309437cb998da9014da36cb))
+
 ## [0.1.22](https://github.com/kanso-labs/kanso-ui-core/compare/v0.1.21...v0.1.22) (2026-11-15)
 
 
