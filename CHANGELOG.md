@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.24](https://github.com/kanso-labs/kanso-ui-core/compare/v0.1.23...v0.1.24) (2026-11-17)
+
+
+### Dependencies
+
+* update dependency typescript-eslint to v8.73.0 ([#97](https://github.com/kanso-labs/kanso-ui-core/issues/97)) ([54d39f2](https://github.com/kanso-labs/kanso-ui-core/commit/54d39f2959f9754d0fa670cc44426a14c8305db4))
+
 ## [0.1.23](https://github.com/kanso-labs/kanso-ui-core/compare/v0.1.22...v0.1.23) (2026-11-16)
 
 
