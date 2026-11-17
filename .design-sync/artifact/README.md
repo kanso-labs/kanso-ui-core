@@ -18,7 +18,7 @@ The sync has two halves, one per repository. This directory is the tokens';
 kanso-ui's `.design-sync/artifact/` is the rest, the bundle, the fonts, the
 types and each component's preview and guidelines, and it holds the step that
 publishes. A daily routine, "Kanso UI design system sync", runs both in one
-session after release-please's 09:00 UTC run, this half first, and any session
+session after release-please's 12:15 UTC run, this half first, and any session
 asked to sync the artifact by hand follows the same steps.
 
 ## What lives where
