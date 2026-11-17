@@ -258,7 +258,7 @@ in `tsdown.config.ts`, which `CODECOV_TOKEN` switches on: unset locally and
 empty for a fork, so neither writes a stats file nor uploads anything. A failed
 upload does not fail the build, so read the job log rather than the check mark.
 
-**Releases are cut by release-please**, once a day at 09:00 UTC like every
+**Releases are cut by release-please**, once a day at 12:15 UTC like every
 kanso-labs repository, from `release-please.yaml`. It publishes through npm's
 trusted publishing, so this repository holds no npm token, and then publishes
 the same tarball to GitHub Packages with `GITHUB_TOKEN`, only once npm has taken
