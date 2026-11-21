@@ -48,6 +48,15 @@ describe('the token defaults', () => {
     expect(dark).toEqual({ ...root, ...darkColors })
   })
 
+  // The inverse error is the other scheme's error, the way the inverse primary
+  // is the other scheme's primary.
+  it("take the other scheme's error as the inverse error", () => {
+    expect(light['--kui-color-inverse-error']).toBe(dark['--kui-color-error'])
+    expect(dark['--kui-color-inverse-error']).toBe(light['--kui-color-error'])
+    expect(light['--kui-color-inverse-error']).toBe('#f2b8b5')
+    expect(dark['--kui-color-inverse-error']).toBe('#b3261e')
+  })
+
   it('carry the breakpoints in px, as tokens.json gives them', () => {
     const expected = Object.fromEntries(
       Object.entries(source.layout.breakpoint).flatMap(([key, token]) =>
