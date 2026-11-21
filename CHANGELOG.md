@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://github.com/kanso-labs/kanso-ui-core/compare/v0.1.24...v0.2.0) (2026-11-21)
+
+
+### Features
+
+* **tokens:** add an inverse error role, the other scheme's error ([#108](https://github.com/kanso-labs/kanso-ui-core/issues/108)) ([da049af](https://github.com/kanso-labs/kanso-ui-core/commit/da049af2465f510d63eef649baeb11909244f460))
+
 ## [0.1.24](https://github.com/kanso-labs/kanso-ui-core/compare/v0.1.23...v0.1.24) (2026-11-19)
 
 
