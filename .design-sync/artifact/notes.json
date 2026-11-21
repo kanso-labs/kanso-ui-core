@@ -82,6 +82,7 @@
     "kui-color-background": "The page behind every surface, from the older role set; the same tone as `kui-color-surface`, which components use instead.",
     "kui-color-error": "Validation errors: an invalid field's outline, its supporting text and the error badge.",
     "kui-color-error-container": "A quieter error fill for a design's own error banner. No component draws it.",
+    "kui-color-inverse-error": "A failure's mark on `kui-color-inverse-surface`, such as the warning glyph that leads a failed action's snackbar. By default the other scheme's `kui-color-error`, which is what clears contrast there.",
     "kui-color-inverse-on-surface": "Text and icons on `kui-color-inverse-surface`.",
     "kui-color-inverse-primary": "Primary actions on `kui-color-inverse-surface`, such as a snackbar's action.",
     "kui-color-inverse-surface": "Surfaces that contrast with the page: snackbars, plain tooltips, the slider's value label.",

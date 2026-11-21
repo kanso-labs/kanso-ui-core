@@ -385,6 +385,9 @@
       "errorContainer": {
         "$value": "{color.error.90}"
       },
+      "inverseError": {
+        "$value": "{color.error.80}"
+      },
       "inverseOnSurface": {
         "$value": "{color.neutral.95}"
       },
@@ -557,6 +560,9 @@
       },
       "errorContainer": {
         "$value": "{color.error.30}"
+      },
+      "inverseError": {
+        "$value": "{color.error.40}"
       },
       "inverseOnSurface": {
         "$value": "{color.neutral.20}"

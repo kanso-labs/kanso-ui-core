@@ -31,7 +31,7 @@ const ROLE_ORDER = [
   'primary', 'onPrimary', 'primaryContainer', 'onPrimaryContainer', 'primaryFixed', 'primaryFixedDim', 'onPrimaryFixed', 'onPrimaryFixedVariant', 'inversePrimary',
   'secondary', 'onSecondary', 'secondaryContainer', 'onSecondaryContainer', 'secondaryFixed', 'secondaryFixedDim', 'onSecondaryFixed', 'onSecondaryFixedVariant',
   'tertiary', 'onTertiary', 'tertiaryContainer', 'onTertiaryContainer', 'tertiaryFixed', 'tertiaryFixedDim', 'onTertiaryFixed', 'onTertiaryFixedVariant',
-  'error', 'onError', 'errorContainer', 'onErrorContainer', 'positive', 'onPositive', 'positiveContainer', 'onPositiveContainer', 'negative', 'onNegative', 'negativeContainer', 'onNegativeContainer',
+  'error', 'onError', 'errorContainer', 'onErrorContainer', 'inverseError', 'positive', 'onPositive', 'positiveContainer', 'onPositiveContainer', 'negative', 'onNegative', 'negativeContainer', 'onNegativeContainer',
   'surface', 'onSurface', 'surfaceVariant', 'onSurfaceVariant', 'surfaceDim', 'surfaceBright', 'surfaceContainerLowest', 'surfaceContainerLow', 'surfaceContainer', 'surfaceContainerHigh', 'surfaceContainerHighest', 'surfaceTint',
   'background', 'onBackground', 'inverseSurface', 'inverseOnSurface', 'outline', 'outlineVariant', 'scrim', 'shadow',
 ];
