@@ -1,6 +1,6 @@
 {
   "name": "@kanso-labs/kanso-ui-core",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "The design data Kanso UI's web and React Native libraries share: the design tokens, the demo schemes and the glyph paths",
   "keywords": [
     "design-system",
@@ -79,7 +79,7 @@
     "style-dictionary": "5.8.0",
     "tsdown": "0.23.7",
     "typescript": "6.0.3",
-    "typescript-eslint": "8.74.0",
+    "typescript-eslint": "8.73.0",
     "vitest": "5.1.1"
   },
   "overrides": {
