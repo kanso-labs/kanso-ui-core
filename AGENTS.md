@@ -272,12 +272,12 @@ release-please's application token fires, never from the run that cut the
 release: that run's checkout can be a later commit, which left releases
 elsewhere tagged and unpublished (kanso-labs/actions#123). The shared
 `_publish-npm.yaml` refuses a tag not on `main`, skips a registry that already
-has the version, and publishes a version older than `latest` under `backport`.
-A version that did not publish is recovered by dispatching Release Please on
-its tag: Run workflow, then the tag under "Use workflow from", or
+has the version, and publishes a version older than `latest` under `backport`. A
+version that did not publish is recovered by dispatching Release Please on its
+tag: Run workflow, then the tag under "Use workflow from", or
 `gh workflow run release-please.yaml --ref v1.2.3`. `check-published.yaml`
-compares the latest releases with both registries every night and keeps an
-issue open, with that command in it, while one is missing.
+compares the latest releases with both registries every night and keeps an issue
+open, with that command in it, while one is missing.
 
 **Dependencies come from Renovate**, through the org-wide runner in
 [`kanso-labs/renovate`](https://github.com/kanso-labs/renovate), and its commits
