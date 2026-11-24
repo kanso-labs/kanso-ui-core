@@ -3,7 +3,7 @@
     "opacity": "State-layer opacities: the on-colour of a container, painted over it at this strength.",
     "radius": "Material Design's corner scale, from square to fully round.",
     "shadow": "Two-layer key and ambient shadows, one per elevation level. Level 0 has none.",
-    "sizing": "Container heights from the Material Design spec pages. A component takes the step its spec names.",
+    "sizing": "Container heights and icon sizes from the Material Design spec pages. A component takes the step its spec names; an icon takes a step as its font size.",
     "spacing": "A 4px grid. Stack's `gap` takes the same step names."
   },
   "palettes": {
@@ -156,6 +156,11 @@
     "kui-sizing-control-xl": "The extra-large control height: XL buttons and the large FAB.",
     "kui-sizing-control-xs": "The extra-small control height: XS buttons and icon buttons, chips, the number field's steppers.",
     "kui-sizing-control-xxl": "The largest control height: XXL buttons and icon buttons.",
+    "kui-sizing-icon-lg": "The standard icon: a standalone or icon button's glyph, a list, menu or tree row's leading and trailing icons, the navigation and the app bar.",
+    "kui-sizing-icon-md": "The medium icon: inside a medium button or a field, and beside body text, such as a note or a callout.",
+    "kui-sizing-icon-sm": "The small icon: inside a chip, an XS or small button's label and a segmented button.",
+    "kui-sizing-icon-xl": "The large icon: an avatar's or a tile's glyph and a large icon button's.",
+    "kui-sizing-icon-xs": "The extra-small icon: an icon set inside dense text, such as a status beside a supporting line.",
     "kui-sizing-row-lg": "Three-line list rows.",
     "kui-sizing-row-md": "Two-line list rows.",
     "kui-sizing-row-sm": "One-line list rows and table rows.",

@@ -57,6 +57,19 @@ describe('the token defaults', () => {
     expect(dark['--kui-color-inverse-error']).toBe('#b3261e')
   })
 
+  // The icon steps are the sizes Material Design's pages draw an icon at, and
+  // both libraries and the apps size an icon's slot by name, so a step that
+  // moves or disappears is a change to every one of them.
+  it("give the icon steps Material Design's sizes", () => {
+    expect({
+      lg: light['--kui-sizing-icon-lg'],
+      md: light['--kui-sizing-icon-md'],
+      sm: light['--kui-sizing-icon-sm'],
+      xl: light['--kui-sizing-icon-xl'],
+      xs: light['--kui-sizing-icon-xs'],
+    }).toEqual({ lg: '24px', md: '20px', sm: '18px', xl: '40px', xs: '16px' })
+  })
+
   it('carry the breakpoints in px, as tokens.json gives them', () => {
     const expected = Object.fromEntries(
       Object.entries(source.layout.breakpoint).flatMap(([key, token]) =>
