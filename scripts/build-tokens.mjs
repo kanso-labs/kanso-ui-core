@@ -246,8 +246,7 @@ function shadowsEntries(allTokens) {
 }
 
 // Flattened from the JSON's three families, control, row and icon, into one
-// record —
-// `controlXs` here is `sizing.component.controlXs` there, and
+// record — `controlXs` here is `sizing.component.controlXs` there, and
 // `--kui-sizing-control-xs` in the stylesheet.
 /** @param {TransformedToken[]} allTokens @returns {Entry[]} */
 function sizingEntries(allTokens) {

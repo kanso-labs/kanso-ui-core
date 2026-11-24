@@ -3,7 +3,7 @@
     "opacity": "State-layer opacities: the on-colour of a container, painted over it at this strength.",
     "radius": "Material Design's corner scale, from square to fully round.",
     "shadow": "Two-layer key and ambient shadows, one per elevation level. Level 0 has none.",
-    "sizing": "Container heights from the Material Design spec pages. A component takes the step its spec names.",
+    "sizing": "Container heights and icon sizes from the Material Design spec pages. A component takes the step its spec names; an icon takes a step as its font size.",
     "spacing": "A 4px grid. Stack's `gap` takes the same step names."
   },
   "palettes": {
