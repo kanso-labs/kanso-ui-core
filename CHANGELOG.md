@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.3.0](https://github.com/kanso-labs/kanso-ui-core/compare/v0.2.1...v0.3.0) (2026-11-24)
+
+
+### Features
+
+* **tokens:** add an icon size scale beside the type scale ([#123](https://github.com/kanso-labs/kanso-ui-core/issues/123)) ([7aa5a1c](https://github.com/kanso-labs/kanso-ui-core/commit/7aa5a1cda9f03b2a2a397c3431639404216bd78d))
+
+
+### Dependencies
+
+* update kanso-labs/actions to v4.6.1 ([#119](https://github.com/kanso-labs/kanso-ui-core/issues/119)) ([3d0801d](https://github.com/kanso-labs/kanso-ui-core/commit/3d0801dcdb80bf1d72bafafb96aa1a6f0f79904e))
+
 ## [0.2.1](https://github.com/kanso-labs/kanso-ui-core/compare/v0.2.0...v0.2.1) (2026-11-23)
 
 
