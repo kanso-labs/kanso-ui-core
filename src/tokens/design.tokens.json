@@ -1195,8 +1195,20 @@
   },
   "sizing": {
     "$type": "dimension",
-    "$description": "Container heights, which every component used to carry as a literal. The values are the Material Design spec's, so the default rendering is unchanged; what they add is a way for a theme to restate them, which is the one axis of density a scheme could not reach before. A component still takes its own height from the step its spec page names - the token is where that step's value lives, not a licence to pick a different one.",
+    "$description": "Container heights, which every component used to carry as a literal. The values are the Material Design spec's, so the default rendering is unchanged; what they add is a way for a theme to restate them, which is the one axis of density a scheme could not reach before. A component still takes its own height from the step its spec page names - the token is where that step's value lives, not a licence to pick a different one. The icon steps are the sizes an icon is drawn at, square, as Material Design's pages name them: 16 for an icon set inside dense text, 18 inside a chip or a small button, 20 inside a medium control or beside body text, 24 for a standalone icon, a list row's leading icon, the navigation and the app bar, and 40 for a large icon or an avatar's glyph. An icon is drawn 1em square, so a slot takes a step as its font size.",
     "primitive": {
+      "16": {
+        "$value": "16px"
+      },
+      "18": {
+        "$value": "18px"
+      },
+      "20": {
+        "$value": "20px"
+      },
+      "24": {
+        "$value": "24px"
+      },
       "32": {
         "$value": "32px"
       },
@@ -1252,6 +1264,21 @@
       },
       "rowLg": {
         "$value": "{sizing.primitive.88}"
+      },
+      "iconXs": {
+        "$value": "{sizing.primitive.16}"
+      },
+      "iconSm": {
+        "$value": "{sizing.primitive.18}"
+      },
+      "iconMd": {
+        "$value": "{sizing.primitive.20}"
+      },
+      "iconLg": {
+        "$value": "{sizing.primitive.24}"
+      },
+      "iconXl": {
+        "$value": "{sizing.primitive.40}"
       }
     }
   },
