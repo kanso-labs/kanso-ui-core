@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.2](https://github.com/kanso-labs/kanso-ui-core/compare/v0.3.1...v0.3.2) (2026-11-25)
+
+
+### Dependencies
+
+* update dependency @types/node to v26.6.10 ([#128](https://github.com/kanso-labs/kanso-ui-core/issues/128)) ([b6e70cb](https://github.com/kanso-labs/kanso-ui-core/commit/b6e70cbe1ee3bac88bd7efbaf4413923c39b2d37))
+
 ## [0.3.1](https://github.com/kanso-labs/kanso-ui-core/compare/v0.3.0...v0.3.1) (2026-11-24)
 
 
