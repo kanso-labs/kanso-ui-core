@@ -78,17 +78,6 @@ function spacingOf(theme: Partial<Record<string, string>>): number[] {
   return SPACING.map((property) => Number.parseFloat(theme[property] ?? ''))
 }
 
-describe('the spacing scale', () => {
-  it('states every step, the two between-steps included', () => {
-    expect(
-      Object.keys(light).filter((property) =>
-        property.startsWith('--kui-spacing-'),
-      ),
-    ).toEqual(expect.arrayContaining(SPACING))
-    expect(spacingOf(light)).toEqual([2, 4, 6, 8, 12, 16, 20, 24, 32, 40])
-  })
-})
-
 describe('the demo schemes', () => {
   it('are the seven both Storybooks render', () => {
     expect(Object.values(demoThemes).map(({ label }) => label)).toEqual([

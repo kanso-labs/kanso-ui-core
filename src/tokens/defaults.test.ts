@@ -83,3 +83,35 @@ describe('the token defaults', () => {
     expect(breakpoints).toEqual(expected)
   })
 })
+
+// The spacing steps in the order of the scale, the two steps between steps
+// included, at the values the token source gives them.
+describe('the spacing scale', () => {
+  it('states every step in order, 6px and 20px between the steps around them', () => {
+    const steps = [
+      light['--kui-spacing-xxs'],
+      light['--kui-spacing-xs'],
+      light['--kui-spacing-xs-plus'],
+      light['--kui-spacing-sm'],
+      light['--kui-spacing-md'],
+      light['--kui-spacing-lg'],
+      light['--kui-spacing-lg-plus'],
+      light['--kui-spacing-xl'],
+      light['--kui-spacing-xxl'],
+      light['--kui-spacing-xxxl'],
+    ]
+
+    expect(steps).toEqual([
+      '2px',
+      '4px',
+      '6px',
+      '8px',
+      '12px',
+      '16px',
+      '20px',
+      '24px',
+      '32px',
+      '40px',
+    ])
+  })
+})

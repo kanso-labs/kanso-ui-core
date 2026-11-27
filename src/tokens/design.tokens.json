@@ -1073,7 +1073,7 @@
   },
   "spacing": {
     "$type": "dimension",
-    "$description": "kanso-specific \u2014 not derived from an external spacing scale, just a general 4px-grid principle.",
+    "$description": "kanso-specific \u2014 not derived from an external spacing scale, a general 4px-grid principle, with 6px and 20px as steps between steps for the metrics Material Design gives there.",
     "primitive": {
       "2": {
         "$value": "2px"
