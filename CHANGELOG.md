@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://github.com/kanso-labs/kanso-ui-core/compare/v0.3.4...v0.4.0) (2026-11-27)
+
+
+### Features
+
+* **tokens:** name the 6px and 20px spacing steps ([#136](https://github.com/kanso-labs/kanso-ui-core/issues/136)) ([bfbd740](https://github.com/kanso-labs/kanso-ui-core/commit/bfbd740d46de68502a847efbda45c3e83b950b7b))
+
 ## [0.3.4](https://github.com/kanso-labs/kanso-ui-core/compare/v0.3.3...v0.3.4) (2026-11-26)
 
 
