@@ -1081,6 +1081,9 @@
       "4": {
         "$value": "4px"
       },
+      "6": {
+        "$value": "6px"
+      },
       "8": {
         "$value": "8px"
       },
@@ -1120,6 +1123,9 @@
       "xs": {
         "$value": "{spacing.primitive.4}"
       },
+      "xsPlus": {
+        "$value": "{spacing.primitive.6}"
+      },
       "sm": {
         "$value": "{spacing.primitive.8}"
       },
@@ -1128,6 +1134,9 @@
       },
       "lg": {
         "$value": "{spacing.primitive.16}"
+      },
+      "lgPlus": {
+        "$value": "{spacing.primitive.20}"
       },
       "xl": {
         "$value": "{spacing.primitive.24}"
