@@ -1073,13 +1073,16 @@
   },
   "spacing": {
     "$type": "dimension",
-    "$description": "kanso-specific \u2014 not derived from an external spacing scale, just a general 4px-grid principle.",
+    "$description": "kanso-specific \u2014 not derived from an external spacing scale, a general 4px-grid principle, with 6px and 20px as steps between steps for the metrics Material Design gives there.",
     "primitive": {
       "2": {
         "$value": "2px"
       },
       "4": {
         "$value": "4px"
+      },
+      "6": {
+        "$value": "6px"
       },
       "8": {
         "$value": "8px"
@@ -1120,6 +1123,9 @@
       "xs": {
         "$value": "{spacing.primitive.4}"
       },
+      "xsPlus": {
+        "$value": "{spacing.primitive.6}"
+      },
       "sm": {
         "$value": "{spacing.primitive.8}"
       },
@@ -1128,6 +1134,9 @@
       },
       "lg": {
         "$value": "{spacing.primitive.16}"
+      },
+      "lgPlus": {
+        "$value": "{spacing.primitive.20}"
       },
       "xl": {
         "$value": "{spacing.primitive.24}"

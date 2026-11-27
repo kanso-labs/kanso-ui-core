@@ -36,7 +36,7 @@ const ROLE_ORDER = [
   'background', 'onBackground', 'inverseSurface', 'inverseOnSurface', 'outline', 'outlineVariant', 'scrim', 'shadow',
 ];
 const TYPE_GROUPS = ['display', 'headline', 'title', 'body', 'label'];
-const SPACING_STEPS = ['xxs', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'xxxl'];
+const SPACING_STEPS = ['xxs', 'xs', 'xsPlus', 'sm', 'md', 'lg', 'lgPlus', 'xl', 'xxl', 'xxxl'];
 const RADIUS_STEPS = ['none', 'xs', 'sm', 'md', 'lg', 'xl', 'pill', 'circle'];
 const FONTS = [
   { family: 'Roboto Flex', file: 'fonts/roboto-flex-latin-opsz-normal.woff2', style: 'normal', weight: '100 1000' },
@@ -458,6 +458,7 @@ function check() {
     ['palette', (a) => (tok(a, 'color', 'color-primary-40').value = '#123456'), (r) => r.src.color.primary['40'].$value === '#123456'],
     ['usage', (a) => (tok(a, 'color', 'kui-color-surface').usage = 'Edited.'), (r) => r.notes.tokens['kui-color-surface'] === 'Edited.'],
     ['spacing', (a) => (tok(a, 'spacing', 'kui-spacing-lg').value = '20px'), (r) => r.src.spacing.component.lg.$value === '{spacing.primitive.20}'],
+    ['a step between steps', (a) => (tok(a, 'spacing', 'kui-spacing-xs-plus').value = '8px'), (r) => r.src.spacing.component.xsPlus.$value === '{spacing.primitive.8}'],
     ['new primitive', (a) => (tok(a, 'radius', 'kui-radius-md').value = '10px'), (r) => r.src.radii.component.md.$value === '{radii.primitive.10}' && r.src.radii.primitive['10'].$value === '10px'],
     ['sizing', (a) => (tok(a, 'sizing', 'kui-sizing-control-sm').value = '48px'), (r) => r.src.sizing.component.controlSm.$value === '{sizing.primitive.48}'],
     ['shadow', (a) => (tok(a, 'shadow', 'kui-shadow-elevation1').value = '0px 2px 4px 0px rgba(0, 0, 0, 0.2)'), (r) => JSON.stringify(r.src.shadow['1'].$value) === JSON.stringify([{ color: 'rgba(0, 0, 0, 0.2)', offsetX: '0px', offsetY: '2px', blur: '4px', spread: '0px' }])],

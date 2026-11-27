@@ -13,6 +13,21 @@ const COLORS = Object.keys(light).filter((property) =>
   property.startsWith('--kui-color-'),
 )
 
+// The spacing steps in the order of the scale, which a scheme stating them
+// keeps: a step named for more room than the one before it never gives less.
+const SPACING = [
+  'xxs',
+  'xs',
+  'xs-plus',
+  'sm',
+  'md',
+  'lg',
+  'lg-plus',
+  'xl',
+  'xxl',
+  'xxxl',
+].map((step) => `--kui-spacing-${step}`)
+
 // WCAG 2's contrast ratio between two `#rrggbb` colours, 1 to 21.
 function contrast(first: string, second: string): number {
   const [lighter = 0, darker = 0] = [
@@ -58,6 +73,11 @@ describe.each([
   })
 })
 
+// The values a theme gives the spacing steps, in pixels, in the scale's order.
+function spacingOf(theme: Partial<Record<string, string>>): number[] {
+  return SPACING.map((property) => Number.parseFloat(theme[property] ?? ''))
+}
+
 describe('the demo schemes', () => {
   it('are the seven both Storybooks render', () => {
     expect(Object.values(demoThemes).map(({ label }) => label)).toEqual([
@@ -88,6 +108,20 @@ describe.each(Object.entries(demoThemes))('the %s scheme', (_, { theme }) => {
     expect(error).toMatch(/^#[\da-f]{6}$/u)
     expect(surface).toMatch(/^#[\da-f]{6}$/u)
     expect(contrast(error ?? '', surface ?? '')).toBeGreaterThanOrEqual(AA)
+  })
+
+  // A scheme restates the spacing scale at its own sizes, so it states the
+  // steps between steps too, and keeps them in order: left out, 6px and
+  // 20px would sit inside a scale whose steps either side had moved.
+  it('states every spacing step, each larger than the last', () => {
+    const steps = spacingOf(theme)
+
+    expect(steps.every((step) => Number.isFinite(step))).toBe(true)
+    expect(
+      steps.every(
+        (step, index) => index === 0 || step > (steps[index - 1] ?? 0),
+      ),
+    ).toBe(true)
   })
 
   // A property tokens.css does not declare is read by nothing, so a misspelt

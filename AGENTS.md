@@ -127,6 +127,11 @@ schemes, so a partial map over the others reads the same everywhere.
 `src/themes.test.ts` holds each scheme to that and to properties `tokens.css`
 declares, and pins the seven labels.
 
+**Every scheme states every spacing step, each larger than the last.** Each
+restates the whole scale at its own sizes, so a step it left out, such as the
+steps between steps, `xs-plus` and `lg-plus`, would sit at its default inside a
+scale whose steps either side had moved. The same test holds them to that.
+
 Contrast is checked where the schemes are drawn: each library's Storybook runs
 its a11y check over every scheme's page, and a scheme changed here has to clear
 WCAG AA in both.

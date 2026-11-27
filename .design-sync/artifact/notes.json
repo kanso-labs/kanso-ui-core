@@ -4,7 +4,7 @@
     "radius": "Material Design's corner scale, from square to fully round.",
     "shadow": "Two-layer key and ambient shadows, one per elevation level. Level 0 has none.",
     "sizing": "Container heights and icon sizes from the Material Design spec pages. A component takes the step its spec names; an icon takes a step as its font size.",
-    "spacing": "A 4px grid. Stack's `gap` takes the same step names."
+    "spacing": "A 4px grid, with two steps between steps: xs-plus between xs and sm, and lg-plus between lg and xl. kanso-ui's Stack `gap` takes the same step names."
   },
   "palettes": {
     "error": "Error tonal palette",
@@ -166,10 +166,12 @@
     "kui-sizing-row-sm": "One-line list rows and table rows.",
     "kui-sizing-row-xs": "Menu items and the shortest list row.",
     "kui-spacing-lg": "The default padding: card and field insets, the page gutter on compact windows.",
+    "kui-spacing-lg-plus": "Between lg and xl: a 20px inset where a component's spec gives one, such as either side of an expanded rail's destinations.",
     "kui-spacing-md": "Padding inside compact containers and gaps between list content.",
     "kui-spacing-sm": "Gaps between related controls: buttons in a row, chips in a group.",
     "kui-spacing-xl": "Padding in dialogs and between sections of a card.",
     "kui-spacing-xs": "Tight gaps inside a control: icon to label in a chip.",
+    "kui-spacing-xs-plus": "Between xs and sm: a 6px offset where a component's spec gives one, such as above a destination's indicator.",
     "kui-spacing-xxl": "Gaps between page sections.",
     "kui-spacing-xxs": "Hairline gaps: a badge's offset, the space between a label and its count.",
     "kui-spacing-xxxl": "The widest gap: between unrelated page regions.",
